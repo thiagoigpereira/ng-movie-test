@@ -1,0 +1,31 @@
+.view {
+  .content {
+    min-width: 990px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search {
+    form {
+      flex-direction: column;
+      .form-group {
+        width:  85%;
+        .form-control {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .view {
+    flex-direction: column;
+    .content {
+      width: 100%;
+      min-width: 100%;
+    } 
+    .poster {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px ;
+    }
+  }
+
+}

@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="text-center">Movie Test</h2>
+  <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quae soluta cumque dignissimos animi, iusto ipsum dolore modi libero nam corrupti cupiditate quod, facilis voluptatum ea! Quas sed possimus ducimus.</p>
+  <div class="search m-4">
+    <form class="d-flex justify-content-center w-100" [formGroup]="searchForm" (ngSubmit)="getMovie()">
+      <div class="form-group m-4">
+        <input type="text" class="form-control" formControlName="search" placeholder="Search movie" />
+      </div>
+      <button class="btn btn-success m-4 pl-2 pr-2" type="submit">Search</button>
+      <button class="btn btn-secondary m-4  pl-4 pr-4" type="reset">Reset</button>
+    </form>
+  </div>
+  <div class="view d-flex mb-4" *ngIf="movie">
+    <div class="content">
+      <h3>{{movie.Title}}</h3>
+      <p>{{movie.Plot}}</p>
+      <p><b>Actors: </b> {{movie.Actors}}</p>
+      <div class="review">
+        <p><b>Review:</b> ⭐⭐⭐⭐⭐</p>
+      </div>
+      <button (onClick)="addFavorites()" class="btn btn-primary"> Favorite 💝 </button>
+    </div>
+    <div class="poster">
+      <img [src]="movie.Poster" alt="{{movie.Title}}">
+    </div>
+  </div>
+</div>
